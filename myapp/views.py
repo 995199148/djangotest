@@ -17,6 +17,7 @@ def index(request):
     startindex = request.GET.get('start')
     endindex = request.GET.get('end')
     # 利用切片 切取对应排名
+    # 此次 需要校验 startindex  endindex cid 为整型 时间原因暂时不做了
     if startindex:
         mydatalist = mydatalist[int(startindex)-1:]
     if endindex:
@@ -40,6 +41,7 @@ def postdata(request):
     if request.POST:
         cid = request.POST['cid']
         num = request.POST['num']
+        # 此次 需要校验 num cid 为整型 时间原因暂时不做了
         # 存在的修改不存在的新增
         obj, flag = clientnum.objects.get_or_create(cid=cid)
         obj.num = num
