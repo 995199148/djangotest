@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>菜鸟教程(runoob.com)</title>
+</head>
+<body>
+<form action="/postdata" method="post">
+    {% csrf_token %}
+    <label>客户端id</label><input type="text" name="cid">
+    <label>分数</label><input type="text" name="num">
+    <input type="submit" value="提交">
+</form>
+
+</body>
+</html>
